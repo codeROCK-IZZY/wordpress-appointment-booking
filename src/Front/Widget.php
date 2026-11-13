@@ -211,7 +211,7 @@ final class Widget {
 			add_query_arg(
 				array(
 					'abk_booking' => rawurlencode( $token ),
-					'abk_note'    => rawurlencode( $note ),
+					'abk_note'    => rawurlencode( (string) $note ),
 				),
 				$page
 			)

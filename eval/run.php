@@ -38,6 +38,11 @@ $arms  = array(
 	'gap_aware' => array( new SlotPolicy( 'gap_aware' ), true, 'Gap-aware, best-fitting person (this plugin)' ),
 );
 
+/**
+ * Results.
+ *
+ * @var array<string, mixed> $result
+ */
 $result = array( 'banks' => array() );
 foreach ( $banks as $key => [ $seeds, $different, $label ] ) {
 	$bank = array(
@@ -75,6 +80,12 @@ foreach ( $banks as $key => [ $seeds, $different, $label ] ) {
 }
 $result['dst'] = Dst::run();
 
+/**
+ * Arms of the held-out and different banks.
+ *
+ * @var array<string, array{booked_rate: float, revenue: int}> $h
+ * @var array<string, array{booked_rate: float, revenue: int}> $d
+ */
 $h      = $result['banks']['heldout']['arms'];
 $d      = $result['banks']['different']['arms'];
 $wrong  = static fn ( string $k ): int => array_sum( array_column( $result['dst'], $k ) );

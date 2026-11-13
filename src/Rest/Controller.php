@@ -307,7 +307,7 @@ final class Controller {
 	 *
 	 * @param \WP_REST_Request<array<string, mixed>> $req Request.
 	 */
-	public static function ics( \WP_REST_Request $req ): \WP_Error|null {
+	public static function ics( \WP_REST_Request $req ): \WP_Error {
 		$row = self::from_token( (string) $req['token'] );
 		if ( null === $row ) {
 			return new \WP_Error( 'abk_token', __( 'That link is not valid.', 'appointment-booking' ), array( 'status' => 404 ) );

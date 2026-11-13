@@ -72,9 +72,9 @@ $book = static fn ( array $over = array() ): WP_REST_Response => $rest(
 		$over
 	)
 );
-$res = $book();
-$id  = (int) ( $res->get_data()['id'] ?? 0 );
-$row = WpdbStore::find( $id );
+$res  = $book();
+$id   = (int) ( $res->get_data()['id'] ?? 0 );
+$row  = WpdbStore::find( $id );
 $check( 'a booking is stored and confirmed', 201 === $res->get_status() && 'confirmed' === ( $row['status'] ?? '' ), wp_json_encode( $res->get_data() ) );
 $claims = (int) $wpdb->get_var( $wpdb->prepare( 'SELECT COUNT(*) FROM %i WHERE booking_id = %d', Schema::claims(), $id ) );
 $check( 'it claims every five minutes of its time and buffer (60 + 15 minutes = 15 units)', 15 === $claims, (string) $claims );
@@ -120,9 +120,9 @@ $check( 'the customer is emailed a calendar file in UTC with the right start', s
 $check( 'the confirmation has a manage link back to the booking page', is_array( $customer ) && str_contains( (string) $customer['message'], home_url( '/book/?abk_booking=' ) ) );
 $check( 'the site owner is emailed with Reply-To set to the customer', is_array( $owner ) && str_contains( implode( ' ', (array) $owner['headers'] ), 'Reply-To: maria.integration@example.com' ) );
 
-$token = Settings::tokens()->issue( $id, 'maria.integration@example.com' );
+$token               = Settings::tokens()->issue( $id, 'maria.integration@example.com' );
 $_GET['abk_booking'] = $token;
-$manage = do_shortcode( '[appointment_booking]' );
+$manage              = do_shortcode( '[appointment_booking]' );
 unset( $_GET['abk_booking'] );
 $check( 'the manage link shows the booking with a cancel button', str_contains( $manage, 'Maria Lopez' ) && str_contains( $manage, 'abk_cancel' ) );
 $bad = $rest( 'POST', '/abk/v1/bookings/cancel', array( 'token' => $id . '.' . str_repeat( 'a', 64 ) ) );
@@ -149,7 +149,7 @@ $check( 'privacy erase removes the personal details but keeps the time booked', 
 $config = Settings::config();
 $alex   = $config->staff['alex'];
 $label  = static fn ( int $t ): string => (string) wp_date( 'H:i', $t, $config->timezone );
-$check( 'opening hours stay 08:00 local on both sides of a clock change', '08:00' === $label( Availability::open_ranges( $config, $alex, '2027-03-27' )[0][0] ) && '08:00' === $label( Availability::open_ranges( $config, $alex, '2027-03-29' )[0][0] ) && Availability::open_ranges( $config, $alex, '2027-03-29' )[0][0] - Availability::open_ranges( $config, $alex, '2027-03-27' )[0][0] === 2 * DAY_IN_SECONDS - HOUR_IN_SECONDS );
+$check( 'opening hours stay 08:00 local on both sides of a clock change', '08:00' === $label( Availability::open_ranges( $config, $alex, '2027-03-27' )[0][0] ) && '08:00' === $label( Availability::open_ranges( $config, $alex, '2027-03-29' )[0][0] ) && 2 * DAY_IN_SECONDS - HOUR_IN_SECONDS === Availability::open_ranges( $config, $alex, '2027-03-29' )[0][0] - Availability::open_ranges( $config, $alex, '2027-03-27' )[0][0] );
 $check( 'a fixed UTC offset is recognised (the settings page warns about it)', Settings::is_fixed_offset( '+01:00' ) && ! Settings::is_fixed_offset( 'Europe/London' ) && ! Settings::is_fixed_offset( 'UTC' ) );
 $clean = \AppointmentBooking\Admin\SettingsPage::clean(
 	array(

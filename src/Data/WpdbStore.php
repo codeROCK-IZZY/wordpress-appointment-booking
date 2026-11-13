@@ -42,7 +42,7 @@ final class WpdbStore implements BookingStore {
 			),
 			ARRAY_A
 		);
-		return array_map( static fn ( array $r ): array => array( (int) $r['start_at'], (int) $r['block_end'] ), is_array( $rows ) ? $rows : array() );
+		return array_values( array_map( static fn ( array $r ): array => array( (int) $r['start_at'], (int) $r['block_end'] ), is_array( $rows ) ? $rows : array() ) );
 	}
 
 	/**

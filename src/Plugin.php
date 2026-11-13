@@ -33,7 +33,12 @@ final class Plugin {
 		if ( get_option( 'abk_db_version' ) !== Schema::DB_VERSION ) {
 			Schema::install();
 		}
-		add_action( self::CRON, array( Mailer::class, 'send_reminders' ) );
+		add_action(
+			self::CRON,
+			static function (): void {
+				Mailer::send_reminders();
+			}
+		);
 		add_action(
 			'init',
 			static function (): void {

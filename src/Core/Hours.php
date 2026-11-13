@@ -100,12 +100,12 @@ final class Hours {
 	private static function merge( array $spans ): array {
 		usort( $spans, static fn ( array $a, array $b ): int => $a[0] <=> $b[0] );
 		$out = array();
-		foreach ( $spans as $s ) {
+		foreach ( $spans as [ $open, $close ] ) {
 			$last = count( $out ) - 1;
-			if ( $last >= 0 && $s[0] <= $out[ $last ][1] ) {
-				$out[ $last ][1] = max( $out[ $last ][1], $s[1] );
+			if ( $last >= 0 && $open <= $out[ $last ][1] ) {
+				$out[ $last ] = array( $out[ $last ][0], max( $out[ $last ][1], $close ) );
 			} else {
-				$out[] = $s;
+				$out[] = array( $open, $close );
 			}
 		}
 		return $out;
