@@ -76,7 +76,7 @@ function report_html( array $r ): string {
 		if ( 'tuning' === $key ) {
 			continue;
 		}
-		$best  = max( array_column( $bank['arms'], 'booked' ) );
+		$best  = max( array_merge( array( 0 ), array_column( $bank['arms'], 'booked' ) ) );
 		$out[] = "<h2>{$e($bank['label'])}</h2><table><tr><th>Times offered</th><th>Customers booked</th><th>Staff time booked</th><th>Revenue</th><th>Times shown</th></tr>";
 		foreach ( $bank['arms'] as $a ) {
 			$cls   = $a['booked'] === $best ? 'good' : '';

@@ -108,6 +108,6 @@ final class Hours {
 				$out[] = array( $open, $close );
 			}
 		}
-		return $out;
+		return array_values( $out );
 	}
 }

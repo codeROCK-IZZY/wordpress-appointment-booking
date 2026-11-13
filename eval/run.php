@@ -72,7 +72,7 @@ foreach ( $banks as $key => [ $seeds, $different, $label ] ) {
 			'booked'      => $tot['booked'],
 			'booked_rate' => round( $tot['booked'] / max( 1, $tot['customers'] ), 4 ),
 			'utilisation' => round( $tot['booked_minutes'] / max( 1, $tot['open_minutes'] ), 4 ),
-			'revenue'     => intdiv( $tot['revenue'], 100 ),
+			'revenue'     => intdiv( (int) $tot['revenue'], 100 ),
 			'options'     => round( $tot['options'] / count( $sims ), 1 ),
 		);
 	}
