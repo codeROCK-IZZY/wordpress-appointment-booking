@@ -1,0 +1,1 @@
+{"rounds": 10, "parallel": 30, "atomic_double_bookings": 0, "check_then_insert_double_bookings": 3, "check_then_insert_rounds_with_doubles": 2}

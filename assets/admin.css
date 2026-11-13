@@ -1,0 +1,17 @@
+.abk-admin .abk-muted { color: #646970; }
+.abk-admin .abk-nav { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.abk-agenda { background: #fff; border: 1px solid #dcdcde; border-radius: 6px; padding: 10px 14px 14px; margin: 12px 0 4px; }
+.abk-hours { position: relative; height: 20px; margin-left: 120px; color: #646970; font-size: 12px; }
+.abk-hours span { position: absolute; transform: translateX(-50%); }
+.abk-row { display: flex; align-items: center; height: 40px; border-top: 1px solid #f0f0f1; }
+.abk-who { width: 120px; flex: none; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.abk-track { position: relative; flex: 1; height: 30px; }
+.abk-open { position: absolute; top: 0; bottom: 0; background: #f0f6fc; border-radius: 4px; }
+.abk-booking { position: absolute; top: 2px; bottom: 2px; background: #2271b1; color: #fff; border-radius: 4px; font-size: 12px; line-height: 26px; padding: 0 6px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; box-shadow: 0 0 0 1px #fff; }
+.abk-buffer { position: absolute; top: 2px; bottom: 2px; background: repeating-linear-gradient(135deg, #c3c4c7 0 4px, #f0f0f1 4px 8px); border-radius: 0 4px 4px 0; }
+.abk-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin: 0 4px 0 10px; vertical-align: -1px; }
+.abk-legend .abk-k-open { background: #f0f6fc; border: 1px solid #c5d9ed; }
+.abk-legend .abk-k-booking { background: #2271b1; }
+.abk-legend .abk-k-buffer { background: repeating-linear-gradient(135deg, #c3c4c7 0 4px, #f0f0f1 4px 8px); }
+.abk-rows input { width: 100%; }
+.abk-rows .abk-wide { min-width: 320px; }

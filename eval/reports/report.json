@@ -1,0 +1,223 @@
+{
+    "banks": {
+        "tuning": {
+            "label": "Tuning businesses",
+            "businesses": 20,
+            "arms": {
+                "every": {
+                    "label": "Every start time that fits (common default)",
+                    "customers": 6207,
+                    "booked": 3951,
+                    "booked_rate": 0.6365,
+                    "utilisation": 0.6502,
+                    "revenue": 255305,
+                    "options": 15.5
+                },
+                "grid": {
+                    "label": "Fixed grid the length of the service",
+                    "customers": 6207,
+                    "booked": 3845,
+                    "booked_rate": 0.6195,
+                    "utilisation": 0.6037,
+                    "revenue": 240265,
+                    "options": 7.6
+                },
+                "gap_first": {
+                    "label": "Gap-aware, first free person (ablation)",
+                    "customers": 6207,
+                    "booked": 4040,
+                    "booked_rate": 0.6509,
+                    "utilisation": 0.6729,
+                    "revenue": 264545,
+                    "options": 9.2
+                },
+                "gap_aware": {
+                    "label": "Gap-aware, best-fitting person (this plugin)",
+                    "customers": 6207,
+                    "booked": 4041,
+                    "booked_rate": 0.651,
+                    "utilisation": 0.6729,
+                    "revenue": 264595,
+                    "options": 9.2
+                }
+            }
+        },
+        "heldout": {
+            "label": "Held-out businesses",
+            "businesses": 30,
+            "arms": {
+                "every": {
+                    "label": "Every start time that fits (common default)",
+                    "customers": 10354,
+                    "booked": 6786,
+                    "booked_rate": 0.6554,
+                    "utilisation": 0.6682,
+                    "revenue": 472335,
+                    "options": 16
+                },
+                "grid": {
+                    "label": "Fixed grid the length of the service",
+                    "customers": 10354,
+                    "booked": 6605,
+                    "booked_rate": 0.6379,
+                    "utilisation": 0.6336,
+                    "revenue": 450400,
+                    "options": 7.4
+                },
+                "gap_first": {
+                    "label": "Gap-aware, first free person (ablation)",
+                    "customers": 10354,
+                    "booked": 6949,
+                    "booked_rate": 0.6711,
+                    "utilisation": 0.6963,
+                    "revenue": 490810,
+                    "options": 9.6
+                },
+                "gap_aware": {
+                    "label": "Gap-aware, best-fitting person (this plugin)",
+                    "customers": 10354,
+                    "booked": 6946,
+                    "booked_rate": 0.6709,
+                    "utilisation": 0.6956,
+                    "revenue": 490425,
+                    "options": 9.6
+                }
+            }
+        },
+        "different": {
+            "label": "Different shape (held back)",
+            "businesses": 10,
+            "arms": {
+                "every": {
+                    "label": "Every start time that fits (common default)",
+                    "customers": 10640,
+                    "booked": 5519,
+                    "booked_rate": 0.5187,
+                    "utilisation": 0.7304,
+                    "revenue": 374370,
+                    "options": 20.5
+                },
+                "grid": {
+                    "label": "Fixed grid the length of the service",
+                    "customers": 10640,
+                    "booked": 5061,
+                    "booked_rate": 0.4757,
+                    "utilisation": 0.6171,
+                    "revenue": 319885,
+                    "options": 6
+                },
+                "gap_first": {
+                    "label": "Gap-aware, first free person (ablation)",
+                    "customers": 10640,
+                    "booked": 5729,
+                    "booked_rate": 0.5384,
+                    "utilisation": 0.7782,
+                    "revenue": 397410,
+                    "options": 12.2
+                },
+                "gap_aware": {
+                    "label": "Gap-aware, best-fitting person (this plugin)",
+                    "customers": 10640,
+                    "booked": 5719,
+                    "booked_rate": 0.5375,
+                    "utilisation": 0.775,
+                    "revenue": 395700,
+                    "options": 12.2
+                }
+            }
+        }
+    },
+    "dst": {
+        "Europe/London": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 210
+        },
+        "Europe/Berlin": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 210
+        },
+        "America/New_York": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 238
+        },
+        "America/Chicago": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 238
+        },
+        "America/Los_Angeles": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 238
+        },
+        "America/Sao_Paulo": {
+            "days": 365,
+            "dst": false,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 0
+        },
+        "America/Santiago": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 154
+        },
+        "Australia/Sydney": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 182
+        },
+        "Pacific/Auckland": {
+            "days": 365,
+            "dst": true,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 175
+        },
+        "Asia/Kolkata": {
+            "days": 365,
+            "dst": false,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 0
+        },
+        "Africa/Lagos": {
+            "days": 365,
+            "dst": false,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 0
+        },
+        "Asia/Tokyo": {
+            "days": 365,
+            "dst": false,
+            "plugin_wrong": 0,
+            "fixed_offset_wrong": 0
+        }
+    },
+    "checks": {
+        "heldout_booked_gap_minus_every_min": 0.0155,
+        "heldout_revenue_gap_vs_every_min": 1.0383,
+        "different_booked_gap_minus_every_min": 0.0188,
+        "dst_plugin_wrong_days_max": 0
+    },
+    "limits": {
+        "heldout_booked_gap_minus_every_min": 0,
+        "heldout_revenue_gap_vs_every_min": 1,
+        "different_booked_gap_minus_every_min": -0.01,
+        "dst_plugin_wrong_days_max": 0
+    },
+    "passed": {
+        "heldout_booked_gap_minus_every_min": true,
+        "heldout_revenue_gap_vs_every_min": true,
+        "different_booked_gap_minus_every_min": true,
+        "dst_plugin_wrong_days_max": true
+    },
+    "ok": true
+}

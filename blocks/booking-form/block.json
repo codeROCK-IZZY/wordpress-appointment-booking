@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "appointment-booking/booking-form",
+	"title": "Appointment booking",
+	"category": "widgets",
+	"icon": "calendar-alt",
+	"description": "Let visitors pick a service, a day and a free time, and book.",
+	"keywords": [ "booking", "appointment", "calendar", "schedule" ],
+	"textdomain": "appointment-booking",
+	"attributes": {
+		"title": { "type": "string", "default": "" },
+		"service": { "type": "string", "default": "" },
+		"staff": { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide" ],
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "abk-block-editor"
+}
