@@ -36,7 +36,8 @@ half for a 30-minute consultation at 10:30, which overlaps it.
 
 The race is intermittent, which is why it survives testing and turns up on a busy morning. CI runs the same test on
 every push against WordPress 6.5 and the latest release. It fails the build if atomic claims ever let a double
-booking through, and prints the check-then-insert count for comparison.
+booking through, and prints the check-then-insert count for comparison. On the first green CI run, check-then-insert
+let through 4 double bookings on one runner and 0 on the other. Atomic claims allowed 0 on both.
 
 **Opening hours across daylight saving** (`php eval/run.php`). A business opens 09:00-17:00 local every day of
 2026 in twelve timezones (4,380 days). Every start time is converted back to local time with PHP's timezone
